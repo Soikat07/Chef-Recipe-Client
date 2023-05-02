@@ -18,7 +18,7 @@ const Home = () => {
       </div>
       <Menus></Menus>
       {/* BLog Post section */}
-      <div className='text-center'>
+      <div className='text-center mt-20 mb-5'>
         <h3 className="text-red-600 text-3xl">Blog Post</h3>
         <h4 className="text-black text-3xl tracking-wider font-bold">
           See Our Latest News
