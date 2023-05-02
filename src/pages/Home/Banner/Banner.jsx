@@ -48,7 +48,7 @@ const Banner = () => {
               Spicy & Tasty <br />
               Italian Delicious Food
             </h2>
-            <div className="space-x-4 text-center mt-4">
+            <div className="space-x-8 text-center mt-4">
               <button className="bg-red-600 border-none px-6 py-4 tracking-wider">
                 ORDER NOW
               </button>
