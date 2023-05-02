@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../../providers/UserProvider';
-import { space } from 'postcss/lib/list';
 
 const Header = () => {
   const { user, logOut } = useContext(UserContext);
@@ -16,7 +15,7 @@ const Header = () => {
   return (
     <nav className="bg-black text-white w-full p-7">
       <div className="flex justify-between items-center mx-12">
-        <h3 className="text-xl font-mono">Nonna's Kitchen</h3>
+        <h3 className="text-3xl font-mono text-red-500">Nonna's Kitchen</h3>
         <ul className="flex space-x-10">
           <li>
             <NavLink
