@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../providers/UserProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
   const [error, setError] = useState('');
@@ -13,19 +14,37 @@ const Registration = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setError('Please add at least one upper case letter');
+      return;
+    } else if (password.length < 6) {
+      setError('Your password should be at least 6 characters');
+      return;
+    }
     setError('');
     // console.log(name, photo, email, password);
+
     createUser(email, password)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
+        //update userProfile
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            console.log('User Profile Updated');
+          })
+          .catch(error => {
+            console.error(error.message);
+          });
       })
       .catch(error => {
-        // console.error(error.message);
-        setError(error.message);
-    })
-  }
+        console.error(error.message);
+      });
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col">
@@ -81,15 +100,15 @@ const Registration = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <Link to="/login" className="label-text-alt link link-hover">
-                  Already have an account?
-                </Link>
-              </label>
             </div>
             <div className="form-control mt-2">
               <button className="btn btn-primary">Register</button>
             </div>
+            <label className="label">
+              <Link to="/login" className="label-text-alt link link-hover">
+                Already have an account?Login
+              </Link>
+            </label>
             <p className="text-red-600">
               <small>{error}</small>
             </p>

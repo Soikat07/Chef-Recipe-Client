@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../providers/UserProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
   const [error, setError] = useState('');
   const { logIn, googleSignIn, gitHubSignIn } = useContext(UserContext);
 
+  // email password login
   const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
@@ -13,7 +15,7 @@ const Login = () => {
     const password = form.password.value;
     setError('');
     console.log(email, password);
-    // email password login
+
     logIn(email, password)
       .then(result => {
         const loggedUser = result.user;
@@ -36,7 +38,7 @@ const Login = () => {
         console.error(error.message);
       });
   };
-  // gitHub signin
+  // gitHub signIn
   const handleGitSignIn = () => {
     gitHubSignIn()
       .then(result => {
@@ -46,7 +48,7 @@ const Login = () => {
       .catch(error => {
         console.error(error.message);
       });
-  }
+  };
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -91,18 +93,25 @@ const Login = () => {
                 onClick={handleGoogleSignIn}
                 className="btn btn-sm btn-outline btn-wide w-full text-primary"
               >
+                <FaGoogle className="me-1" />
                 LogIn With Google
               </button>
               <button
                 onClick={handleGitSignIn}
                 className="btn btn-sm btn-outline btn-wide w-full text-sky-600"
               >
+                <FaGithub className="me-1" />
                 LogIn With GitHub
               </button>
             </div>
-            <Link to="/registration">
-              <button className="btn btn-link">New Here?</button>
-            </Link>
+            <label className="label">
+              <Link
+                to="/registration"
+                className="label-text-alt link link-hover"
+              >
+                New in Here?Register
+              </Link>
+            </label>
           </form>
         </div>
       </div>
