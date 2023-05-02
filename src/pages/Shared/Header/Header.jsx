@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <nav className="bg-black text-white w-full p-7">
       <div className="flex justify-between items-center mx-12">
-        <h3 className="text-3xl font-mono text-red-500">Nonna's Kitchen</h3>
+        <h3 className="text-3xl font-mono text-red-500 tracking-wide">Nonna's Kitchen</h3>
         <ul className="flex space-x-10">
           <li>
             <NavLink
@@ -31,6 +31,14 @@ const Header = () => {
               to="/blog"
             >
               BLOG
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? 'active' : 'default')}
+              to="/contact"
+            >
+              CONTACT US
             </NavLink>
           </li>
         </ul>
