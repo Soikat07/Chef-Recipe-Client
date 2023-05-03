@@ -9,10 +9,10 @@ import { FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
 
 const BlogPost = () => {
   return (
-    <div className="grid grid-cols-3 mb-16 px-5">
+    <div className="grid grid-cols-3 mb-16 w-[94vw] mx-auto">
       <div className="card w-96 bg-base-100 shadow-xl text-gray-600">
         <figure className="px-10 pt-10">
-          <img src={blog1} alt="Shoes" className="rounded-xl" />
+          <img src={blog1} alt="" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center relative">
           <div className="absolute -top-12">
@@ -31,8 +31,10 @@ const BlogPost = () => {
             </span>
             <p>3 May 2023</p>
           </div>
-          <div className='flex justify-center items-center tracking-wide'>
-          <p className="link-hover hover:text-blue-600">Read More</p>
+          <div className="flex justify-center items-center tracking-wide">
+            <p className="link-hover hover:text-blue-600 cursor-pointer">
+              Read More
+            </p>
             <span>
               <FaArrowRight />
             </span>
@@ -42,7 +44,7 @@ const BlogPost = () => {
 
       <div className="card w-96 bg-base-100 shadow-xl text-gray-600">
         <figure className="px-10 pt-10">
-          <img src={blog2} alt="Shoes" className="rounded-xl" />
+          <img src={blog2} alt="" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center relative">
           <div className="absolute -top-12">
@@ -61,8 +63,10 @@ const BlogPost = () => {
             </span>
             <p>3 May 2023</p>
           </div>
-          <div className='flex justify-center items-center tracking-wide'>
-          <p className="link-hover hover:text-blue-600">Read More</p>
+          <div className="flex justify-center items-center tracking-wide">
+            <p className="link-hover hover:text-blue-600 cursor-pointer">
+              Read More
+            </p>
             <span>
               <FaArrowRight />
             </span>
@@ -72,7 +76,7 @@ const BlogPost = () => {
 
       <div className="card w-96 bg-base-100 shadow-xl text-gray-600">
         <figure className="px-10 pt-10">
-          <img src={blog3} alt="Shoes" className="rounded-xl" />
+          <img src={blog3} alt="" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center relative">
           <div className="absolute -top-12">
@@ -91,8 +95,10 @@ const BlogPost = () => {
             </span>
             <p>3 May 2023</p>
           </div>
-          <div className='flex justify-center items-center tracking-wide'>
-          <p className="link-hover hover:text-blue-600">Read More</p>
+          <div className="flex justify-center items-center tracking-wide">
+            <p className="link-hover hover:text-blue-600 cursor-pointer">
+              Read More
+            </p>
             <span>
               <FaArrowRight />
             </span>

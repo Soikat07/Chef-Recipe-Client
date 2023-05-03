@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login/Login";
 import Registration from "../pages/Login/Registration/Registration";
 import Home from "../pages/Home/Home/Home";
 import Contact from "../pages/Contact/Contact";
+import Chef from "../pages/Home/Chef/Chef";
 
 
 const router = createBrowserRouter([
@@ -16,25 +17,25 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: 'blog',
-        element: <Blog/>
+        element: <Blog />,
       },
       {
         path: 'contact',
-        element:<Contact/>
+        element: <Contact />,
       },
       {
         path: 'login',
-        element:<Login/>
+        element: <Login />,
       },
       {
         path: 'registration',
-        element:<Registration/>
-      }
-    ]
-  }
-])
+        element: <Registration />,
+      },
+    ],
+  },
+]);
 export default router;
