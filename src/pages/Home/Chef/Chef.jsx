@@ -24,7 +24,7 @@ const Chef = ({chefs}) => {
             </span>
             <p>{likes}</p>
           </div>
-          <button className="bg-red-500 px-4 text-white py-3 tracking-wider rounded-md">
+          <button className="bg-red-600 hover:bg-red-700 px-4 text-white py-3 tracking-wider rounded-md">
             <Link to={`/chef/${id}`}>View Recipes</Link>
           </button>
         </div>
