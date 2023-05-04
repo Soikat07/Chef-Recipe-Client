@@ -95,14 +95,14 @@ const Login = () => {
             <div className="text-center space-y-2">
               <button
                 onClick={handleGoogleSignIn}
-                className="btn btn-sm btn-outline btn-wide w-full text-primary"
+                className="btn btn-sm btn-outline w-full text-primary"
               >
                 <FaGoogle className="me-1" />
                 LogIn With Google
               </button>
               <button
                 onClick={handleGitSignIn}
-                className="btn btn-sm btn-outline btn-wide w-full text-sky-600"
+                className="btn btn-sm btn-outline w-full text-sky-600"
               >
                 <FaGithub className="me-1" />
                 LogIn With GitHub
