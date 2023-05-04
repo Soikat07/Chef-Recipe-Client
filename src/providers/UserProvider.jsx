@@ -53,8 +53,7 @@ const UserProvider = ({children}) => {
     logIn,
     logOut,
     googleSignIn,
-    gitHubSignIn,
-    loading,
+    gitHubSignIn
   }
   return (
     <UserContext.Provider value={userInfo}>

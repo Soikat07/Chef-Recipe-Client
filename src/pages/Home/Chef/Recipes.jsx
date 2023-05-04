@@ -45,8 +45,8 @@ const Recipes = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:w-[86vw] mx-auto gap-y-6 lg:gap-x-10 mb-10">
-        {recipes.map((recipe, index) => (
-          <RecipeCards recipe={recipe} key={index} />
+        {recipes.map((recipe) => (
+          <RecipeCards recipe={recipe}/>
         ))}
       </div>
     </div>
