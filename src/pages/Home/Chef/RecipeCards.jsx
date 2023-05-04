@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
+import Rating from 'react-rating';
 import { toast } from 'react-toastify';
 
 const RecipeCards = ({ recipe }) => {
@@ -28,7 +29,15 @@ const RecipeCards = ({ recipe }) => {
             ))}
           </div>
           <div className="card-actions justify-end mt-auto">
-            <p>Ratings:{ratings.average}</p>
+            <Rating
+              className='text-yellow-400'
+              placeholderRating={ratings.average}
+              readonly
+              emptySymbol={<FaRegStar/>}
+              placeholderSymbol={<FaStar/>}
+              fullSymbol={<FaStar/>}
+            />
+            <p>{ratings.average}</p>
             <button
               disabled={favorite}
               onClick={handleToast}
