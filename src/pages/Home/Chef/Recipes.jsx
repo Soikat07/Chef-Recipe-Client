@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeCards from './RecipeCards';
 import { FaHeart } from 'react-icons/fa';
+import LazyLoad from 'react-lazy-load';
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -21,7 +22,9 @@ const Recipes = () => {
       <div className="my-10 w-[90vw] mx-auto">
         <div className="card card-side bg-base-100 shadow-xl">
           <figure>
-            <img src={chef_image} alt="Movie" />
+            <LazyLoad threshold={0.95} onContentVisible={() =>{console.log('loaded!')}}>
+              <img src={chef_image} alt="Movie" />
+            </LazyLoad>
           </figure>
           <div className="card-body">
             <h2 className="card-title">Chef Name: {chef_name}</h2>
@@ -30,7 +33,7 @@ const Recipes = () => {
             </p>
             <div>
               <p>Year Of Experience: {experience} Years</p>
-                <p className='my-1'>Total Recipes: {num_recipes}</p>
+              <p className="my-1">Total Recipes: {num_recipes}</p>
               <div className="flex items-center gap-x-1">
                 <span className="text-red-600">
                   <FaHeart />
@@ -41,10 +44,10 @@ const Recipes = () => {
           </div>
         </div>
       </div>
-      <div className='grid grid-cols-3 w-[86vw] mx-auto gap-x-10 mb-10'>
-        {
-          recipes.map((recipe,index) => <RecipeCards recipe={ recipe} key={index}/>)
-        }
+      <div className="grid grid-cols-3 w-[86vw] mx-auto gap-x-10 mb-10">
+        {recipes.map((recipe, index) => (
+          <RecipeCards recipe={recipe} key={index} />
+        ))}
       </div>
     </div>
   );
