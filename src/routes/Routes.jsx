@@ -7,6 +7,7 @@ import Registration from "../pages/Login/Registration/Registration";
 import Home from "../pages/Home/Home/Home";
 import Contact from "../pages/Contact/Contact";
 import Recipes from "../pages/Home/Chef/Recipes";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'chef/:id',
-        element: <Recipes></Recipes>,
+        element: (
+          <PrivateRoutes>
+            <Recipes></Recipes>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://chef-hunter-server-flame.vercel.app/chef/${params.id}`

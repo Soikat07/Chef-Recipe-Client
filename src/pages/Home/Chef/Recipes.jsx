@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeCards from './RecipeCards';
+import { FaHeart } from 'react-icons/fa';
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -9,7 +10,7 @@ const Recipes = () => {
     singleChef;
   
   useEffect(() => {
-    fetch('https://chef-hunter-server-flame.vercel.app/recipes')
+    fetch(`https://chef-hunter-server-soikat07.vercel.app/recipes/${id}`)
       .then(res => res.json())
       .then(data => setRecipes(data));
     
@@ -17,26 +18,32 @@ const Recipes = () => {
   
   return (
     <div className="min-h-[80vh]">
-      <div className='my-10 w-[90vw] mx-auto'>
+      <div className="my-10 w-[90vw] mx-auto">
         <div className="card card-side bg-base-100 shadow-xl">
           <figure>
-            <img
-              src={chef_image}
-              alt="Movie"
-            />
+            <img src={chef_image} alt="Movie" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
+            <h2 className="card-title">Chef Name: {chef_name}</h2>
+            <p className="w-96 text-gray-600">
+              <span className="font-semibold">Chef Bio</span>: {description}
+            </p>
+            <div>
+              <p>Year Of Experience: {experience} Years</p>
+                <p className='my-1'>Total Recipes: {num_recipes}</p>
+              <div className="flex items-center gap-x-1">
+                <span className="text-red-600">
+                  <FaHeart />
+                </span>
+                <p>{likes}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
+      <div className='grid grid-cols-3 w-[86vw] mx-auto gap-x-10 mb-10'>
         {
-          // recipes.filter(recipe => <RecipeCards recipe={recipe}/>)
+          recipes.map((recipe,index) => <RecipeCards recipe={ recipe} key={index}/>)
         }
       </div>
     </div>

@@ -15,7 +15,7 @@ const Chef = ({chefs}) => {
         <h2 className="card-title">{chef_name}</h2>
         <div>
           <p>Total Recipes : {num_recipes}</p>
-          <p>Years Of Experience: {experience}</p>
+          <p>Years Of Experience: {experience} Years</p>
         </div>
         <div className="flex justify-between items-center">
           <div className="flex justify-center items-center gap-x-1">

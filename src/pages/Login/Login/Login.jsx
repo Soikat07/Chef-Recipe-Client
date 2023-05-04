@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../providers/UserProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
-  const [error, setError] = useState('');
   const { logIn, googleSignIn, gitHubSignIn } = useContext(UserContext);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from=location.state?.from?.pathname || '/'
 
   // email password login
   const handleLogin = event => {
@@ -20,6 +23,7 @@ const Login = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from,{replace: true})
         form.reset();
       })
       .catch(error => {
