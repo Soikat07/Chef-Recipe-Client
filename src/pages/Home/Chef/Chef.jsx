@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaThumbsUp} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Chef = ({chefs}) => {
   
@@ -17,13 +18,15 @@ const Chef = ({chefs}) => {
           <p>Years Of Experience: {experience}</p>
         </div>
         <div className="flex justify-between items-center">
-          <div className='flex justify-center items-center gap-x-1'>
-            <span className='text-blue-600'>
+          <div className="flex justify-center items-center gap-x-1">
+            <span className="text-blue-600">
               <FaThumbsUp />
             </span>
-          <p>{likes}</p>
+            <p>{likes}</p>
           </div>
-          <button className='bg-red-500 px-4 text-white py-3 tracking-wider rounded-md'>View Recipes</button>
+          <button className="bg-red-500 px-4 text-white py-3 tracking-wider rounded-md">
+            <Link to={`/chef/${id}`}>View Recipes</Link>
+          </button>
         </div>
       </div>
     </div>

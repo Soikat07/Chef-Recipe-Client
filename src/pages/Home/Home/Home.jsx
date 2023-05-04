@@ -8,7 +8,7 @@ const Home = () => {
   const [chef, setChef] = useState([]);
 
   useEffect(() => {
-    fetch('https://chef-recipe-server-soikat07.vercel.app/chef')
+    fetch('https://chef-hunter-server-flame.vercel.app/chef')
       .then(res => res.json())
       .then(data => setChef(data))
       .catch(error => console.error(error));
