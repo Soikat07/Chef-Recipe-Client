@@ -13,7 +13,7 @@ const RecipeCards = ({ recipe }) => {
   }
   return (
     <>
-      <div className="card h-[78vh] w-96 bg-slate-600 text-primary-content">
+      <div className="card h-[78vh] w-screen lg:w-96 bg-slate-600 text-primary-content">
         <div className="card-body">
           <h2 className="card-title">{recipe_name}</h2>
           <div>

@@ -20,7 +20,7 @@ const Recipes = () => {
   return (
     <div className="min-h-[80vh]">
       <div className="my-10 w-[90vw] mx-auto">
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side bg-base-100 shadow-xl">
           <figure>
             <LazyLoad threshold={0.95} onContentVisible={() =>{console.log('loaded!')}}>
               <img src={chef_image} alt="Movie" />
@@ -28,7 +28,7 @@ const Recipes = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">Chef Name: {chef_name}</h2>
-            <p className="w-96 text-gray-600">
+            <p className="lg:w-96 text-gray-600">
               <span className="font-semibold">Chef Bio</span>: {description}
             </p>
             <div>
@@ -44,7 +44,7 @@ const Recipes = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 w-[86vw] mx-auto gap-x-10 mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:w-[86vw] mx-auto gap-y-6 lg:gap-x-10 mb-10">
         {recipes.map((recipe, index) => (
           <RecipeCards recipe={recipe} key={index} />
         ))}

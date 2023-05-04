@@ -9,7 +9,7 @@ import { FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
 
 const BlogPost = () => {
   return (
-    <div className="grid grid-cols-3 mb-16 w-[94vw] mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-3 mb-16 lg:w-[94vw] mx-auto">
       <div className="card w-96 bg-base-100 shadow-xl text-gray-600">
         <figure className="px-10 pt-10">
           <img src={blog1} alt="" className="rounded-xl" />

@@ -6,7 +6,7 @@ import img3 from '../../../assets/carousel3.jpg';
 const Banner = () => {
   return (
     <>
-       <div className="carousel w-full h-[90vh]">
+       <div className="carousel w-full lg:h-[90vh]">
           <div id="slide1" className="carousel-item relative w-full">
             <img src={img2} className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -42,13 +42,12 @@ const Banner = () => {
           </div>
         </div>
         {/* text div */}
-        <div className="absolute right-1/4 top-1/2 text-white">
-          <div>
+        <div className="absolute right-1/4 top-1/2 text-white hidden lg:block">
             <h2 className="text-center text-6xl tracking-wider">
               Spicy & Tasty <br />
               Italian Delicious Food
             </h2>
-            <div className="space-x-8 text-center mt-4">
+            <div className="space-x-8 text-center mt-10">
               <button className="bg-red-600 border-none px-6 py-4 tracking-wider">
                 ORDER NOW
               </button>
@@ -57,7 +56,6 @@ const Banner = () => {
               </button>
             </div>
           </div>
-        </div>
       </>
   );
 };

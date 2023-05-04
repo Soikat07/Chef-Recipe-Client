@@ -20,11 +20,11 @@ const Home = () => {
       {/* Banner section */}
       <Banner></Banner>
       {/* Chef section */}
-      <div className='text-center my-16 w-1/2 mx-auto'>
-        <h2 className='text-4xl text-red-600 mb-4 tracking-widest'>Our Chefs</h2>
+      <div className='text-center my-10 lg:my-16 lg:w-1/2 px-5 mx-auto'>
+        <h2 className=' text-3xl lg:text-4xl text-red-600 mb-4 tracking-widest'>Our Chefs</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veniam non, rem dolorum vero itaque ex culpa aut blanditiis Lorem ipsum dolor sit. vel!</p>
       </div>
-      <div className="grid grid-cols-3 gap-y-8 w-[90vw] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-8 lg:w-[90vw] lg:mx-auto ">
         {chef.map(chefs => (
           <Chef chefs={chefs} key={chefs.id} />
         ))}

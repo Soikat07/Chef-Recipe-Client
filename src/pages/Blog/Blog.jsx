@@ -5,6 +5,18 @@ const ref = React.createRef();
 const Blog = () => {
   return (
     <div ref={ref}>
+      <div className="mt-10 ms-5 lg:ms-14">
+        <Pdf targetRef={ref} filename="code-example.pdf">
+          {({ toPdf }) => (
+            <button
+              className="bg-slate-600 px-3 py-2 text-white hover:bg-slate-800"
+              onClick={toPdf}
+            >
+              Download Pdf
+            </button>
+          )}
+        </Pdf>
+      </div>
       <div className="min-h-[75vh] w-[90vw] mx-auto">
         <h1 className="text-center text-2xl my-4">Questions & Answers</h1>
         <div className="mb-4">
@@ -63,7 +75,7 @@ const Blog = () => {
             </li>
           </ol>
         </div>
-        <div className="mb-5">
+        <div className="mb-10">
           <h3 className="font-bold">
             Q-4:What is a custom hook, and why will you create a custom hook?
           </h3>
@@ -75,11 +87,6 @@ const Blog = () => {
             maintainability of our code.
           </p>
         </div>
-      </div>
-      <div className='text-center my-6'>
-      <Pdf targetRef={ref} filename="code-example.pdf">
-        {({ toPdf }) => <button className='bg-slate-600 px-3 py-2 text-white hover:bg-slate-800' onClick={toPdf}>Download Pdf</button>}
-      </Pdf>
       </div>
     </div>
   );
