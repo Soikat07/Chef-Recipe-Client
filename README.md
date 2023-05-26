@@ -1,7 +1,7 @@
 # b7a10-chef-recipe-hunter-client-side-Soikat07
 
 ## Live Link
-Hosted in Netlify -> [recipe-hunter](https://chimerical-souffle-ab9024.netlify.app)
+Hosted in Netlify -> [recipe-hunter](https://zippy-mooncake-62e55d.netlify.app/)
 
 
 About this Project ->

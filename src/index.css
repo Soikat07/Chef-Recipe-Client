@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active{
-  @apply transition-colors duration-200 font-medium tracking-wide hover:text-amber-500 text-amber-500
+  @apply transition-colors duration-200 font-medium tracking-wide hover:text-orange-500 text-amber-500
 }
 .default{
     @apply transition-colors duration-200 font-medium tracking-wide hover:text-amber-500

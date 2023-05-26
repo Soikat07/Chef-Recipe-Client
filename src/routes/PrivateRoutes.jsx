@@ -6,11 +6,11 @@ const PrivateRoutes = ({ children }) => {
   const { user,loading } = useContext(UserContext);
   const location = useLocation();
   if (loading) {
-    return (
-      <div className="radial-progress text-center text-blue-600" style={{ '--value': 70 }}>
-        100%
-      </div>
-    );
+      return (
+        <div className="radial-progress text-center text-blue-600" style={{ '--value': 70 }}>
+          100%
+        </div>
+      );
   }
   if (user) {
     return children;
